@@ -1,2 +1,1 @@
-console.log("javascript");
-console.log("divyanshu");
+console.log("Welcome to JavaScript");
