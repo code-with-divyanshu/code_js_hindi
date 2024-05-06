@@ -42,4 +42,5 @@ console.log(val1);
 
 const marks = 300;
 marks > 200 ? console.log("Pass") : console.log("Fail");
+
 // * nullish coalescing operator and terinary operator are different
