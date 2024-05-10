@@ -20,7 +20,7 @@ if (temperature === 40) {
 
 // console.log(`User Power: ${power}`);  // control flow is block scoped
 
-// *** Shorthand notation for if or else statement
+// *** Shorthand notation for if  statement
 
 const balance = 1000;
 
