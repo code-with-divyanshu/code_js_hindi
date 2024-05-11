@@ -1,10 +1,8 @@
-const coding = ["js", "cpp", "rb", "py", "html", "css"];
+const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// return values of array in any variables using forEach loop
-
-const values = coding.forEach((val) => {
-  console.log(val);
-  return val;
+// filter method to return arr into new variable
+const newNums = myNums.filter((num) => {
+  return num > 4;
 });
 
-console.log(values); // for each not return any value
+console.log(newNums);
