@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous JavaScript</title>
+  </head>
+  <body>
+    <h1>Asynchronous JavaScript 1</h1>
+    <button id="stop">Stop</button>
+    <script>
+      // asynchronus javascript -- use settimeout(); function
+
+      // 1st way
+      setTimeout(() => {
+        console.log("Javascript");
+      }, 2000);
+
+      // 2nd way
+
+      const sayDivyanshu = () => {
+        console.log("Hello Divyanshu");
+      };
+
+      setTimeout(sayDivyanshu, 2000);
+
+      // some practice
+
+      const changeHeading = () => {
+        document.querySelector("h1").innerHTML = "Asyn Js Part 1";
+      };
+
+      //   setTimeout(changeHeading, 3000);
+
+      // to clear timeout to stop settimeout function
+
+      const changeMe = setTimeout(changeHeading, 3000);
+
+      document.querySelector("#stop").addEventListener("click", (e) => {
+        clearTimeout(changeMe);
+        console.log("Stopped");
+      });
+    </script>
+  </body>
+</html>
