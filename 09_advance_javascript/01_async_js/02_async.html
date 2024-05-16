@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous JavaScript</title>
+  </head>
+  <body>
+    <h1>Asynchronous JavaScript 2</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+      // asynchronus javascript -- use setInterval(); function
+
+      // 1st way
+      const sayDate = () => {
+        console.log("javascript", Date.now());
+      };
+
+      // setInterval(sayDate, 1000);
+
+      // 2nd way
+
+      const sayName = (str) => {
+        console.log(str, Date.now());
+      };
+
+      // setInterval(sayName, 1000, "Divyanshu");
+
+      // to clear interval to stop setInterval function
+
+      const intervalValid = setInterval(sayName, 1000, "Divyanshu");
+
+      clearInterval(intervalValid);
+
+      // practice question
+
+      let start = document.querySelector("#start");
+      let stop = document.querySelector("#stop");
+
+      // start the timer:
+
+      let interval;
+
+      start.addEventListener("click", function () {
+        interval = setInterval(sayName, 1000, "Divyanshu");
+      });
+
+      // Stopping the timer:
+      stop.addEventListener("click", function () {
+        clearInterval(interval);
+      });
+    </script>
+  </body>
+</html>
