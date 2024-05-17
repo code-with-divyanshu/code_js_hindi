@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <div class="container">
+      <h1>API Request</h1>
+    </div>
+  </body>
+  <script>
+    // httprequest
+
+    // 0 UNSENT Client has been created. open() not called yet.
+
+    // 1 OPENED open() hasbeen called.
+
+    // 2 HEADERS_RECEIVED send() has been called, and headers and status are available.
+
+    // 3 LOADING Downloading; responseText holds partial data.
+
+    // 4 DONE The operation is complete.
+
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requestUrl);
+    xhr.onreadystatechange = function () {
+      console.log(xhr.readyState);
+      if (xhr.readyState === 4) {
+        const data = JSON.parse(this.responseText);
+        console.log(typeof data); // most of the data come from url in the form of string
+        console.log(data.followers);
+        console.log(data.avatar_url);
+      }
+    };
+    xhr.send();
+
+    //console
+
+    // console and document are not the part of core javascript
+
+    // console.log is a debugger given javascript run time tool v8 engine
+  </script>
+</html>
