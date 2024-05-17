@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .col {
+        margin: 10px;
+      }
+
+      #para {
+        font-size: 2rem;
+      }
+
+      .btn {
+        background-color: aqua;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+      }
+    </style>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <div class="container" style="text-align: center">
+      <div class="row">
+        <div class="col"><img src="" alt="" /></div>
+        <div class="col" id="para"></div>
+        <div class="col"><button class="btn">Get Request</button></div>
+      </div>
+    </div>
+    <p style="text-align: center">
+      Click Here to Get Http Request From hiteshchoudhary github api
+    </p>
+  </body>
+  <script>
+    // 0 UNSENT Client has been created. open() not called yet.
+
+    // 1 OPENED open() hasbeen called.
+
+    // 2 HEADERS_RECEIVED send() has been called, and headers and status are available.
+
+    // 3 LOADING Downloading; responseText holds partial data.
+
+    // 4 DONE The operation is complete.
+
+    const btn = document.querySelector(".btn");
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", requestUrl);
+      xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+          const data = JSON.parse(this.responseText);
+          console.log(typeof data); // most of the data come from url in the form of string
+          const followers = data.followers;
+          console.log(followers);
+          const dp = data.avatar_url;
+          console.log(dp);
+          const img = document.querySelector("img");
+          const para = document.querySelector("#para");
+          const row = document.querySelector(".row");
+
+          img.setAttribute("src", dp);
+          img.style.width = "200px";
+          img.style.borderRadius = "10px";
+
+          para.innerHTML = followers;
+          para.style.backgroundColor = "grey";
+          para.style.borderRadius = "10px";
+          para.style.padding = "10px";
+
+          row.style.backgroundColor = "#1a607a";
+          row.style.borderRadius = "10px";
+          row.style.padding = "10px";
+        }
+      };
+      xhr.send();
+    });
+  </script>
+</html>
