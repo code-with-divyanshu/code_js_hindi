@@ -1,6 +1,6 @@
 // inheritance in classes
 
-class user {
+class User {
   constructor(username) {
     this.username = username;
   }
@@ -10,7 +10,7 @@ class user {
   }
 }
 
-class teacher extends user {
+class Teacher extends User {
   constructor(username, email, password) {
     super(username); // call parent's constructor
     this.email = email;
@@ -22,13 +22,13 @@ class teacher extends user {
   }
 }
 
-const teacher1 = new teacher("Hitesh", "hitesh@gmail.com", "1231");
+const teacher1 = new Teacher("Hitesh", "hitesh@gmail.com", "1231");
 
 teacher1.addCourse();
 teacher1.logMe();
 
-const user1 = new user("Divyanshu");
+const user1 = new User("Divyanshu");
 user1.logMe();
 
-console.log(teacher1 instanceof user);
-console.log(teacher1 instanceof teacher);
+console.log(teacher1 instanceof Teacher);
+console.log(teacher1 instanceof User);
