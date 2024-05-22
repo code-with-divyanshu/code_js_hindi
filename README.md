@@ -2,6 +2,6 @@
 
 ### from chai_or_javaScript playlist
 
-### teach by Hitesh Choudhary
+### teach by @hiteshchoudhary
 
 ### This is my learned js concept repo to revise my learning
